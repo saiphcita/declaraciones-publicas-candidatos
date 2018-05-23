@@ -15,7 +15,7 @@ https://emagar.github.io/los-candidatos/
 
 Corre desde la linea de comandos el siguiente comando:
 
-> pip -r requirements.txt
+> pip install -r requirements.txt
 
 ### Iniciar el análisis
 
