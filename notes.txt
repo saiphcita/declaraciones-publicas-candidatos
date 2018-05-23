@@ -1,0 +1,26 @@
+porcentaje de candidatos de senado que no declara son 84% de los que aparecen en la lista
+Numero de partidos corruptos senado
+****************************
+#MORENA,11
+#PAN,13
+#PRI,44
+
+Porcentaje que no dieron senado
+**********************************
+FINAL:MORENA,84.6153846154
+FINAL:PRI,86.2745098039
+FINAL:INDEPENDIENTE,0
+FINAL:PAN,81.25
+
+Numero que no dieron diputado
+************************************
+MORENA,14
+PRI,95
+INDEPENDIENTE,3
+PAN,11
+Numero que SI dieron diputado
+************************************
+MORENA,14,41.6666666667
+PRI,95,11.214953271
+INDEPENDIENTE,3,0.0
+PAN,11,21.4285714286
