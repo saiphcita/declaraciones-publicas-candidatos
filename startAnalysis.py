@@ -16,7 +16,7 @@ def getNamesPartido(partido):
 	for l in lines:
 		l=l.lower()
 		l=l.replace("\n","")
-		print (l)
+		print(l)
 		name=l
 		funcionarioPartidos.setdefault(name,{})
 		funcionarioPartidos[name][partido]=0
@@ -43,14 +43,14 @@ def getCandidateInfoDiputado():
 		#suplente=candidatosSenadoSuplente[i].lower()
 
 		year=yearCandidato[i]
-		print year
+		print(year)
 		i+=1
 		if year==2018:
 			candidatosDiputadoPartido[c]=partido
 			#candidatosDiputadoPartido[suplente]=partido
 
 	for c in candidatosDiputadoPartido:
-		print c+", "+candidatosDiputadoPartido[c]
+		print(c+", "+candidatosDiputadoPartido[c])
 	pickle.dump(candidatosDiputadoPartido, open("candidatosDiputadoPartido.p", "wb" ))
 	
 
@@ -75,7 +75,7 @@ def getCandidateInfoSenado():
 		candidatosSenadoPartido[suplente]=partido
 
 	for c in candidatosSenadoPartido:
-		print c+", "+candidatosSenadoPartido[c]
+		print(c+", "+candidatosSenadoPartido[c])
 	pickle.dump(candidatosSenadoPartido, open("candidatosSenadoPartido.p", "wb" ))
 	
 
@@ -98,16 +98,16 @@ def getNamesYear(year):
 		allFuncionarios[name]=0
 		if "EL SERVIDOR NO ACEPTO HACER PUBLICOS SUS DATOS PATRIMONIALES" in str(v):
 		
-			#print (name)
-			#print (v)
+			#print(name)
+			#print(v)
 			didNotAccept.setdefault(name,0)
 			didNotAccept[name]+=1
 		indexN+=1
-	print ("Num. funcionarios sin declarar:"+str(len(didNotAccept)))
-	print (len(allFuncionarios))
+	print("Num. funcionarios sin declarar:"+str(len(didNotAccept)))
+	print(len(allFuncionarios))
 	p=len(didNotAccept)*100
 	p=float(float(p)/float(len(allFuncionarios)))
-	print (p)
+	print(p)
 	for n in didNotAccept:
 		v=didNotAccept[n]
 	pickle.dump(didNotAccept, open("didNotAccept"+str(year)+".p", "wb" ))
@@ -137,7 +137,7 @@ def getAllCorruptFuncionariosAcrossYears():
 	allFuncionarios=addFuncionarios(allFuncionarios,funcionarios2017,2017)
 	allFuncionarios=addFuncionarios(allFuncionarios,funcionarios2018,2018)
 
-	print len(allFuncionarios)
+	print(len(allFuncionarios))
 	pickle.dump(allFuncionarios, open("allFuncionariosCorruptos.p", "wb" ))
 	
 
@@ -156,7 +156,7 @@ def getAllFuncionariosAcrossYears():
 	allFuncionarios=addFuncionarios(allFuncionarios,funcionarios2017,2017)
 	allFuncionarios=addFuncionarios(allFuncionarios,funcionarios2018,2018)
 
-	print len(allFuncionarios)
+	print(len(allFuncionarios))
 	pickle.dump(allFuncionarios, open("allFuncionarios.p", "wb" ))
 	
 
@@ -228,7 +228,7 @@ def calcularDiputadosCorruptosPartido():
 		porcentaje=corrupto*100
 		porcentaje=float(float(porcentaje)/float(numCandidatosPartidoFound[partido]))
 		pNuevo=100-porcentaje
-		print partido+","+str(corrupto)+","+str(pNuevo)
+		print(partido+","+str(corrupto)+","+str(pNuevo))
 	#numCandidatosPartidoFound={}
 	#numCandidatosPartidoCorrupto={}
 
@@ -254,16 +254,16 @@ def findFuncionario():
 	for f in candidatosSenadoPartido:
 		if f in allFuncionarios:
 			foundCandidatesSenado[f]=candidatosSenadoPartido[f]
-	print len(foundCandidatesSenado)
+	print(len(foundCandidatesSenado))
 	candidatoSenadoCorruptos={}
 	for f in foundCandidatesSenado:
 		if f in allFuncionariosCorruptos:
 			candidatoSenadoCorruptos[f]=foundCandidatesSenado[f]
-	print len(candidatoSenadoCorruptos)
+	print(len(candidatoSenadoCorruptos))
 
 	porcentajeCorruptos=len(candidatoSenadoCorruptos)*100
 	porcentajeCorruptos=float(float(porcentajeCorruptos)/float(len(foundCandidatesSenado)))
-	print porcentajeCorruptos
+	print(porcentajeCorruptos)
 
 	partidosCorruptos={}
 
@@ -294,7 +294,7 @@ def findFuncionario():
 		else:
 			porcentaje=0
 			numCorruptos=0
-		print "FINAL:"+p+","+str(porcentaje)+","+str(numCorruptos)
+		print("FINAL:"+p+","+str(porcentaje)+","+str(numCorruptos))
 
 
 
@@ -368,17 +368,17 @@ calcularDiputadosCorruptosPartido()
 
 
 	#if i<100:
-	#	print (i)
-	#	print (d)
-	#	print ()
+	#	print(i)
+	#	print(d)
+	#	print()
 	#	i+=1
 	#else:
 	#	break
 
-#print (data)
+#print(data)
 
 
-#print ("hello")
+#print("hello")
 
 #table2 = pq.read_table("2018.parquet")
 #table2.to_pandas()
@@ -387,17 +387,17 @@ calcularDiputadosCorruptosPartido()
 
 #for row in table2:
 #	if i==2:
-#		print ("counter:"+str(i))
-#		print (row)
+#		print("counter:"+str(i))
+#		print(row)
 		#for e in row:
-		#	print (e)
+		#	print(e)
 	#elif i==9:
-	#	print ("counter:"+str(i))
-	#	print (row)
+	#	print("counter:"+str(i))
+	#	print(row)
 
 #	i+=1
 	#if i<:
-	#	print (row)
+	#	print(row)
 	#	i+=1
 	#else:
 	#	break
@@ -406,15 +406,15 @@ calcularDiputadosCorruptosPartido()
 #rows.print(myfile.parquet)
 #table = rows.import_from_parquet("2018.parquet")
 #for row in table:
-#    print (row)
+#    print(row)
 #    break
 #with open("2018.parquet") as fo:
-	#print ("eber")
+	#print("eber")
 	#for row in parquet.DictReader(fo):
-	#	print (row)
+	#	print(row)
    # prints:
    # {"foo": 1, "bar": 2}
    # {"foo": 4, "bar": 5}
    #for row in parquet.DictReader(fo, columns=['foo', 'bar']):
        #print(json.dumps(row))
-   # @   print (row)
+   # @   print(row)
